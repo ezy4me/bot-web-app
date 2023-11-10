@@ -1,12 +1,18 @@
+
 @import "./UI/input.scss";
 @import "./UI/button.scss";
 @import "./UI/card.scss";
+@import "./UI/datepicker.scss";
 @import "./UI/form.scss";
 @import "./UI/swiper.scss";
 @import "./layouts/products.scss";
 @import "./layouts/header.scss";
 @import "./typography.scss";
 
+
+button.rw-calendar-btn-today {
+    display: none;
+}
 
 :root {
     font-family: "SFPro", sans-serif;
