@@ -50,6 +50,21 @@ body {
     height: 100vh;
 }
 
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.text {
+    font-size: 17px;
+}
+
 @media (prefers-color-scheme: light) {
     :root {
         color: #213547;
