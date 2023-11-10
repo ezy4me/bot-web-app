@@ -12,11 +12,15 @@
         .username {
             background: #646cff;
             border-radius: 1rem;
-            padding: 0 4px;
+            padding: 4px 12px;
             display: flex;
             align-items: center;
             justify-content: start;
-            gap: 1rem;
+            gap: .5rem;
+
+            p {
+                margin: 0;
+            }
         }
     }
 

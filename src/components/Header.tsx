@@ -19,7 +19,7 @@ const Header = () => {
       <div className="header__actions">
         <div className="username">
           <FaUser />
-          <p>{user}</p>
+          <p>{user} adsa</p>
         </div>
         <Link to="/form">
           <button>Форма</button>
