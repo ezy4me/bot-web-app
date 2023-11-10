@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 // import axios from "axios";
 
-import productsData from "../../db/products.json";
+import productsData from "../../../public/db/products.json";
 
 interface Product {
   id: string;
