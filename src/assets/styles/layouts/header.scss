@@ -8,6 +8,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        .username {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: 1rem;
+        }
     }
 
     &__inner {
@@ -17,3 +24,4 @@
         gap: 0.5rem;
     }
 }
+
