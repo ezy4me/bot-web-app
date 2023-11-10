@@ -13,14 +13,12 @@ function App() {
     <Provider store={store}>
       <div className="app">
         <Header />
-        <Router>
           <ScrollToTop />
           <Routes>
             <Route index element={<ProductsList />} />
             <Route path="/form" element={<Form />} />
             <Route path="/product" element={<ProductInfo />} />
           </Routes>
-        </Router>
       </div>
     </Provider>
   );
