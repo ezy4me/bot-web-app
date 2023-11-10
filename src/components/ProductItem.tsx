@@ -6,7 +6,7 @@ const ProductItem = ({ product, onAdd }: any) => {
   return (
     <div className={"card"}>
       <div className={"card__img"}>
-        <img src="/public/no-image.jpg" alt="image" />
+        <img src="/images/no-image.jpg" alt="image" />
       </div>
       <div className={"card__title"}>{product.title}</div>
       <div className={"card__body"}>{product.description}</div>
