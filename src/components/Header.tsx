@@ -21,19 +21,21 @@ const Header = () => {
           <FaUser />
           <p>{user}</p>
         </div>
+        <button className="icon" onClick={onClose}>
+          <FaTimes />
+        </button>
+      </div>
+      <div className="header__nav">
         <Link to="/form">
           <button>Форма</button>
         </Link>
         <Link to="/">
           <button>Каталог</button>
         </Link>
-        <button className="icon" onClick={onClose}>
-          <FaTimes />
-        </button>
       </div>
       <div className="header__inner">
         <Input label="Поиск" value={inputValue} onChange={handleInputChange} />
-        <button className="icon" style={{ background: '#646cff' }}>
+        <button className="icon" style={{ background: "#646cff" }}>
           <FaFilter />
         </button>
       </div>
