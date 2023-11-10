@@ -1,12 +1,13 @@
 import React, { ChangeEvent } from 'react';
 
 interface InputProps {
-  label: string;
+  label?: string;
   value: string;
+  placeHolder?: string;
   onChange: (value: string) => void;
 }
 
-const Input: React.FC<InputProps> = ({ label, value, onChange }) => {
+const Input: React.FC<InputProps> = ({ label, value,placeHolder, onChange }) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
   };
@@ -14,7 +15,7 @@ const Input: React.FC<InputProps> = ({ label, value, onChange }) => {
   return (
     <div className='input-field'>
       <label>{label}</label>
-      <input type="text" value={value} onChange={handleChange} />
+      <input type="text" placeholder={placeHolder} value={value} onChange={handleChange} />
     </div>
   );
 };
