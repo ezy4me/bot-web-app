@@ -49,6 +49,11 @@ const ProductInfo = () => {
       <div className="product-info__desc">
         <p>{selectedProduct.description}</p>
       </div>
+
+      <div className="product-info__title">
+        <p className="text">Характеристики</p>
+      </div>
+
       <ul className="product-info__list">
         <li className="product-info__item">
           <p className="text">Двигатель</p>
@@ -76,7 +81,40 @@ const ProductInfo = () => {
         </li>
       </ul>
 
+      <div className="product-info__title">
+        <p className="text">Цены</p>
+      </div>
 
+      <ul className="product-info__list">
+        <li className="product-info__item">
+          <p className="text">За сутки</p>
+          <p className="text">₽25000</p>
+        </li>
+        <li className="product-info__item">
+          <p className="text">Выходные дни (Сб и Вс)</p>
+          <p className="text">₽25000</p>
+        </li>
+        <li className="product-info__item">
+          <p className="text">Еженедельно (7д+)</p>
+          <p className="text">₽25000</p>
+        </li>
+        <li className="product-info__item">
+          <p className="text">Ежемесячно (30д+)</p>
+          <p className="text">₽25000</p>
+        </li>
+        <li className="product-info__item">
+          <p className="text">Мин. кол-во дней</p>
+          <p className="text">4</p>
+        </li>
+        <li className="product-info__item">
+          <p className="text">Макс. кол-во дней</p>
+          <p className="text">Без водителя</p>
+        </li>
+        <li className="product-info__item">
+          <p className="text">Пробег в день</p>
+          <p className="text">40000</p>
+        </li>
+      </ul>
     </div>
   );
 };
