@@ -4,6 +4,7 @@ import { FaFilter } from "react-icons/fa";
 
 import { useTelegram } from "../hooks/useTelegram";
 import Input from "../UI/Input";
+import Form from "./Form";
 const Header = () => {
   const { user, onClose } = useTelegram();
 
@@ -17,6 +18,7 @@ const Header = () => {
     <header className="header">
       <div className="header__actions">
         <div className="username">{user}</div>
+        <Form/>
         <button onClick={onClose}>Закрыть</button>
       </div>
       <div className="header__inner">
