@@ -37,7 +37,7 @@ const Form = () => {
           placeholderText="Дата сдачи"
           dateFormat="dd / MM / yyyy"
           selected={endDate}
-          minDate={new Date()}
+          minDate={startDate ? new Date(startDate) : undefined}
           onChange={(date: any) => setEndDate(date)}
         />
       </div>
