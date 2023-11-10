@@ -8,16 +8,20 @@ const ProductItem = ({ product, onAdd }: any) => {
       <div className="card__img">
         <img src="/images/no-image.jpg" alt="image" />
       </div>
-      <div className="card__title">{product.title}</div>
-      <div className="card__body">{product.description}</div>
-      <div className="card__actions">
+      <div className="card__title">
+        {product.brand} {product.model}
+      </div>
+      <div className="card__body">
+        <span>{product.description}</span>
         <span>
-          Стоимость: <b>product.price</b>
+          Стоимость: <b>{product.price}</b>
         </span>
       </div>
-      <button className="add-btn" onClick={onAddHandler}>
-        Добавить
-      </button>
+      <div className="card__actions">
+        <button className="add-btn" onClick={onAddHandler}>
+          Добавить
+        </button>
+      </div>
     </div>
   );
 };

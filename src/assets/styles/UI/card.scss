@@ -5,28 +5,33 @@
     justify-content: space-between;
     gap: 0.5rem;
 
-    border: 1px solid #3B3B3B;
+    border: 1px solid #3b3b3b;
     border-radius: 1rem;
-
-    padding: 1rem;
-
 
     &__img {
         img {
+            border-top-right-radius: 1rem;
+            border-top-left-radius: 1rem;
             width: 100%;
             object-fit: cover;
         }
     }
-    
+
     &__title {
+        padding: 0 1rem;
         font-size: 17px;
     }
 
-    &__body{
+    &__body {
+        padding: 0 1rem;
         font-size: 16px;
+
+        display: flex;
+        flex-direction: column;
+        grid-area: .5rem;
     }
 
     &__actions {
-
+        padding: 1rem 0;
     }
 }
