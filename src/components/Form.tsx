@@ -30,12 +30,14 @@ const Form = () => {
           placeholderText="Дата получения"
           dateFormat="dd / MM / yyyy"
           selected={startDate}
+          minDate={new Date()}
           onChange={(date: any) => setStartDate(date)}
         />
         <DatePicker
           placeholderText="Дата сдачи"
           dateFormat="dd / MM / yyyy"
           selected={endDate}
+          minDate={new Date()}
           onChange={(date: any) => setEndDate(date)}
         />
       </div>
