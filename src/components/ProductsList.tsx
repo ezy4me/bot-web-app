@@ -1,65 +1,18 @@
-import ProductItem from "./ProductItem";
+import React from "react";
 
-const products = [
-  {
-    id: "1",
-    brand: "Toyota",
-    model: "Camry",
-    price: 30000,
-    description: "Седан, бензин",
-  },
-  {
-    id: "2",
-    brand: "Honda",
-    model: "Civic",
-    price: 25000,
-    description: "Хэтчбек, гибрид",
-  },
-  {
-    id: "3",
-    brand: "Ford",
-    model: "Escape",
-    price: 35000,
-    description: "Внедорожник, бензин",
-  },
-  {
-    id: "4",
-    brand: "Chevrolet",
-    model: "Malibu",
-    price: 28000,
-    description: "Седан, бензин",
-  },
-  {
-    id: "5",
-    brand: "Tesla",
-    model: "Model 3",
-    price: 50000,
-    description: "Электрокар, седан",
-  },
-  {
-    id: "6",
-    brand: "Nissan",
-    model: "Rogue",
-    price: 32000,
-    description: "Внедорожник, бензин",
-  },
-  {
-    id: "7",
-    brand: "BMW",
-    model: "X5",
-    price: 60000,
-    description: "Внедорожник, дизель",
-  },
-  {
-    id: "8",
-    brand: "Mercedes-Benz",
-    model: "C-Class",
-    price: 45000,
-    description: "Седан, дизель",
-  },
-];
+import ProductItem from "./ProductItem";
+import { useAppDispatch, useAppSelector } from "../hooks/redux";
+import { fetchProducts } from "../store/reducers/ProductsSlice";
 
 const ProductsList = () => {
+  const dispatch = useAppDispatch();
+
+  React.useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
+  const { products } = useAppSelector((state) => state.productReducer);
+
   const onAdd = (product: any) => {
     console.log(product);
   };
@@ -68,7 +21,7 @@ const ProductsList = () => {
     <div className="products">
       <div className="products__list">
         {products.map((item) => (
-          <ProductItem product={item} onAdd={onAdd} />
+          <ProductItem key={item.id} product={item} onAdd={onAdd} />
         ))}
       </div>
     </div>

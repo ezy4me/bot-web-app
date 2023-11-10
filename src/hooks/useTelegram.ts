@@ -8,6 +8,6 @@ export function useTelegram() {
   return {
     onClose,
     tg,
-    user: tg.initDataUnsafe?.user?.username
+    user: tg.initDataUnsafe?.user?.username || "username"
   };
 }

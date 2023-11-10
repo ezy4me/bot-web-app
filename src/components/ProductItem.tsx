@@ -1,6 +1,14 @@
-const ProductItem = ({ product, onAdd }: any) => {
-  const onAddHandler = () => {
-    onAdd(product);
+import { Link } from "react-router-dom";
+import { useAppDispatch } from "../hooks/redux";
+import { productSlice } from "../store/reducers/ProductsSlice";
+
+const ProductItem = ({ product }: any) => {
+  const { setSelectedProduct  } = productSlice.actions;
+
+  const dispatch = useAppDispatch();
+
+  const onViewHandler = () => {
+    dispatch(setSelectedProduct(product));
   };
 
   return (
@@ -18,9 +26,11 @@ const ProductItem = ({ product, onAdd }: any) => {
         </span>
       </div>
       <div className="card__actions">
-        <button className="add-btn" onClick={onAddHandler}>
-          Добавить
-        </button>
+        <Link to={{ pathname: "/product" }}>
+          <button className="add-btn" onClick={onViewHandler}>
+            Просмотр
+          </button>
+        </Link>
       </div>
     </div>
   );
