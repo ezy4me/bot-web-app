@@ -20,15 +20,17 @@
 
 .react-datepicker__day--selected {
     background-color: #646cff;
+    background-color: $hint-color;
     
 }
 .react-datepicker__header {
     background-color: #fff;
+    background-color: $secondary-bg-color;
 }
 
 .react-datepicker__day--keyboard-selected {
+    background-color: $hint-color;
     background-color: #646cff;
-
 }
 
 .react-datepicker__month-container {
