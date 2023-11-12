@@ -16,7 +16,14 @@ function App() {
   const {tg} = useTelegram()
   React.useEffect(() => {
     tg.expand();
-    tg.MainButton.hide();
+  }, []);
+
+  React.useEffect(() => {
+    tg.MainButton.setParams({
+      text: "Get Me Car",
+    });
+
+    tg.MainButton.disable();
   }, []);
 
   return (
