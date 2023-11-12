@@ -10,8 +10,8 @@ const BackButton = () => {
   };
 
   return (
-    <button className="icon">
-      <FaArrowLeft onClick={handleGoBack}>Назад</FaArrowLeft>
+    <button className="icon" onClick={handleGoBack}>
+      <FaArrowLeft>Назад</FaArrowLeft>
     </button>
   );
 };
