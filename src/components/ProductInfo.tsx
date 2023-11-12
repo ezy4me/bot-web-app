@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Link } from "react-router-dom";
+
 
 const ProductInfo = () => {
   const { setSelectedProduct } = productSlice.actions;
@@ -38,9 +40,11 @@ const ProductInfo = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-      <div className="product-info__actions">
-        <button className="add-btn">Перейти к бронированию</button>
-      </div>
+      <Link to={"/form"}>
+        <div className="product-info__actions">
+          <button className="add-btn">Перейти к бронированию</button>
+        </div>
+      </Link>
       <div className="product-info__title">
         <p className="text">
           {selectedProduct.brand} {selectedProduct.model}

@@ -1,7 +1,11 @@
 import React from "react";
 import Input from "../UI/Input";
-import DatePicker from "react-datepicker";
+import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import BackButton from "./BackButton";
+
+import ru from "date-fns/locale/ru";
+registerLocale("ru", ru);
 
 const Form = () => {
   const [name, setName] = React.useState("");
@@ -24,13 +28,18 @@ const Form = () => {
   };
   return (
     <div className="form">
-      <h3>Введите данные для аренды</h3>
+      <div className="form__header">
+        <BackButton />
+        <h3>Введите данные для аренды</h3>
+      </div>
+
       <div className="form__dates">
         <DatePicker
           placeholderText="Дата получения"
           dateFormat="dd / MM / yyyy"
           selected={startDate}
           minDate={new Date()}
+          locale={ru}
           onChange={(date: any) => setStartDate(date)}
         />
         <DatePicker
@@ -38,6 +47,7 @@ const Form = () => {
           dateFormat="dd / MM / yyyy"
           selected={endDate}
           minDate={startDate ? new Date(startDate) : undefined}
+          locale={ru}
           onChange={(date: any) => setEndDate(date)}
         />
       </div>

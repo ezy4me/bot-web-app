@@ -24,11 +24,11 @@ const Header = () => {
         <button className="icon" onClick={onClose}>
           <FaTimes />
         </button>
+        <Link to="/">
+          <button>Каталог</button>
+        </Link>
       </div>
       <div className="header__nav">
-        <Link to="/form">
-          <button>Форма</button>
-        </Link>
         <Link to="/">
           <button>Каталог</button>
         </Link>
