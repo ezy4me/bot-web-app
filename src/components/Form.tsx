@@ -34,6 +34,8 @@ const Form = () => {
   React.useEffect(() => {
     tg.MainButton.setParams({
       text: "Отправить данные",
+      color: "#535bf2"
+
     });
   }, []);
 
