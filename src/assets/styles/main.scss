@@ -10,11 +10,6 @@
 @import "./layouts/header.scss";
 @import "./typography.scss";
 
-
-.message-input-wrapper {
-    display: none;
-}
-
 button.rw-calendar-btn-today {
     display: none;
 }
@@ -66,7 +61,8 @@ p {
     padding: 0;
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
     padding: 0;
     margin: 0;
