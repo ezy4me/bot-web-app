@@ -8,13 +8,11 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Link } from "react-router-dom";
-import { useTelegram } from "../hooks/useTelegram";
 
 
 const ProductInfo = () => {
   const { setSelectedProduct } = productSlice.actions;
   const dispatch = useAppDispatch();
-  const {tg} = useTelegram()
   const { selectedProduct } = useAppSelector((state) => state.productReducer);
 
   React.useEffect(() => {
@@ -26,11 +24,6 @@ const ProductInfo = () => {
     }
   }, [dispatch]);
 
-  React.useEffect(() => {
-    tg.MainButton.setParams({
-      text: "Отправить данные"
-    })
-  })
 
   return (
     <div className="product-info">

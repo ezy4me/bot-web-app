@@ -7,7 +7,11 @@ import BackButton from "./BackButton";
 import ru from "date-fns/locale/ru";
 registerLocale("ru", ru);
 
+import { useTelegram } from "../hooks/useTelegram";
+
 const Form = () => {
+  const { tg } = useTelegram();
+
   const [name, setName] = React.useState("");
   const [surname, setSurname] = React.useState("");
   const [patronymic, setPatronymic] = React.useState("");
@@ -26,6 +30,17 @@ const Form = () => {
   const onChangePatronymic = (newValue: string) => {
     setPatronymic(newValue);
   };
+
+  React.useEffect(() => {
+    tg.MainButton.setParams({
+      text: "Отправить данные",
+    });
+  }, []);
+
+  React.useEffect(() => {
+    tg.MainButton.show();
+  }, []);
+
   return (
     <div className="form">
       <div className="form__header">
