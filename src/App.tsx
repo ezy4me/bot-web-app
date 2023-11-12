@@ -21,8 +21,8 @@ function App() {
     tg.MainButton.setParams({
       text: "Get Me Car",
     });
-
-    // tg.MainButton.disable();
+    tg.MainButton.show();
+    tg.MainButton.disable();
   }, []);
 
   return (
