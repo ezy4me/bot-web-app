@@ -10,7 +10,7 @@
         justify-content: space-between;
 
         .username {
-            background: $secondary-bg-color;
+            background: #646cff;
             border-radius: 1rem;
             padding: 4px 12px;
             display: flex;
@@ -37,7 +37,5 @@
         align-items: end;
         justify-content: space-between;
         gap: 0.5rem;
-        position: relative;
-
     }
 }

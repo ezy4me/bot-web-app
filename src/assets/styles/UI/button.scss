@@ -2,7 +2,7 @@ button {
     border-radius: 8px;
     padding: 0.6em 1.2em;
     font-size: 17px;
-    background-color: $button-color;
+    // background-color: $button-color;
     background-color: #1a1a1a;
     color: $button-text-color;
     cursor: pointer;
@@ -19,10 +19,10 @@ button {
         font-size: 1.2em;
     }
 }
-// button:hover {
-//     background-color: #646cff;
-//     color: #fafafa;
-// }
+button:hover {
+    background-color: #646cff;
+    color: #fafafa;
+}
 
 .icon {
     border-radius: 50%;
