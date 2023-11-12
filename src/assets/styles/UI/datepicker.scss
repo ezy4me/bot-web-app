@@ -1,5 +1,8 @@
 @import "node_modules/react-datepicker/src/stylesheets/datepicker.scss";
 
+.custom-input {
+    min-width: 140px;
+}
 
 .react-datepicker-wrapper {
     margin-right: 1rem;

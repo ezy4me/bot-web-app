@@ -41,6 +41,18 @@ const Form = () => {
     tg.MainButton.show();
   }, []);
 
+  const ExampleCustomInput = React.forwardRef(
+    ({ value, onClick, type }: any, ref: any) => (
+      <div>
+        {type && <p>Дата получения</p>}
+        {!type && <p>Дата сдачи</p>}
+        <button className="custom-input" onClick={onClick} ref={ref}>
+          {value || "Выберите дату"}
+        </button>
+      </div>
+    )
+  );
+
   return (
     <div className="form">
       <div className="form__header">
@@ -50,20 +62,20 @@ const Form = () => {
 
       <div className="form__dates">
         <DatePicker
-          placeholderText="Дата получения"
           dateFormat="dd / MM / yyyy"
           selected={startDate}
           minDate={new Date()}
           locale={ru}
           onChange={(date: any) => setStartDate(date)}
+          customInput={<ExampleCustomInput type={true}/>}
         />
         <DatePicker
-          placeholderText="Дата сдачи"
           dateFormat="dd / MM / yyyy"
           selected={endDate}
           minDate={startDate ? new Date(startDate) : undefined}
           locale={ru}
           onChange={(date: any) => setEndDate(date)}
+          customInput={<ExampleCustomInput type={false}/>}
         />
       </div>
 
