@@ -10,10 +10,9 @@ import React from "react";
 import { useTelegram } from "./hooks/useTelegram";
 const store = setupStore();
 
-
-
 function App() {
-  const {tg} = useTelegram()
+  const { tg } = useTelegram();
+
   React.useEffect(() => {
     tg.expand();
   }, []);
@@ -23,19 +22,19 @@ function App() {
       text: "Get Me Car",
     });
 
-    tg.MainButton.disable();
+    // tg.MainButton.disable();
   }, []);
 
   return (
     <Provider store={store}>
       <div className="app">
         <Header />
-          <ScrollToTop />
-          <Routes>
-            <Route index element={<ProductsList />} />
-            <Route path="/form" element={<Form />} />
-            <Route path="/product" element={<ProductInfo />} />
-          </Routes>
+        <ScrollToTop />
+        <Routes>
+          <Route index element={<ProductsList />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/product" element={<ProductInfo />} />
+        </Routes>
       </div>
     </Provider>
   );
