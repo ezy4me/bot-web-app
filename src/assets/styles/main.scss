@@ -11,6 +11,10 @@
 @import "./typography.scss";
 
 
+.message-input-wrapper {
+    display: none;
+}
+
 button.rw-calendar-btn-today {
     display: none;
 }
