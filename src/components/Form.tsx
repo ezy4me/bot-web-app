@@ -35,12 +35,12 @@ const Form = () => {
     tg.MainButton.setParams({
       text: "Отправить данные",
       color: "#535bf2"
-
     });
   }, []);
 
   React.useEffect(() => {
     tg.MainButton.show();
+    tg.MainButton.enable();
   }, []);
 
   const ExampleCustomInput = React.forwardRef(
