@@ -16,8 +16,17 @@ const Form = () => {
   const [surname, setSurname] = React.useState("");
   const [patronymic, setPatronymic] = React.useState("");
 
-  const [startDate, setStartDate] = React.useState(null);
-  const [endDate, setEndDate] = React.useState(null);
+  // const [startDate, setStartDate] = React.useState(new Date());
+  // const [endDate, setEndDate] = React.useState(null);
+
+  const [dateRange, setDateRange] = React.  useState([new Date(), new Date()]);
+  const [startDate, endDate] = dateRange;
+
+  // const onDateChange = (dates: any) => {
+  //   const [start, end] = dates;
+  //   setStartDate(start);
+  //   setEndDate(end);
+  // };
 
   const onChangeName = (newValue: string) => {
     setName(newValue);
@@ -34,7 +43,7 @@ const Form = () => {
   React.useEffect(() => {
     tg.MainButton.setParams({
       text: "Отправить данные",
-      color: "#535bf2"
+      color: "#535bf2",
     });
   }, []);
 
@@ -44,12 +53,11 @@ const Form = () => {
   }, []);
 
   const ExampleCustomInput = React.forwardRef(
-    ({ value, onClick, type }: any, ref: any) => (
+    ({ value, onClick }: any, ref: any) => (
       <div>
-        {type && <p>Дата получения</p>}
-        {!type && <p>Дата сдачи</p>}
+        <p>Дата</p>
         <button className="custom-input" onClick={onClick} ref={ref}>
-          {value || "Выберите дату"}
+          {value || startDate}
         </button>
       </div>
     )
@@ -66,19 +74,24 @@ const Form = () => {
         <DatePicker
           dateFormat="dd / MM / yyyy"
           selected={startDate}
+          selectsRange={true}
           minDate={new Date()}
+          startDate={startDate}
+          endDate={endDate}
           locale={ru}
-          onChange={(date: any) => setStartDate(date)}
-          customInput={<ExampleCustomInput type={true}/>}
+          onChange={(update: any) => {
+            setDateRange(update);
+          }}
+          customInput={<ExampleCustomInput />}
         />
-        <DatePicker
+        {/* <DatePicker
           dateFormat="dd / MM / yyyy"
           selected={endDate}
           minDate={startDate ? new Date(startDate) : undefined}
           locale={ru}
           onChange={(date: any) => setEndDate(date)}
           customInput={<ExampleCustomInput type={false}/>}
-        />
+        /> */}
       </div>
 
       <Input placeHolder="Имя" value={name} onChange={onChangeName} />
