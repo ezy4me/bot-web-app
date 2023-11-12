@@ -15,7 +15,8 @@ const store = setupStore();
 function App() {
   const {tg} = useTelegram()
   React.useEffect(() => {
-    tg.expand()
+    tg.expand();
+    tg.MainButton.hide();
   }, []);
 
   return (
