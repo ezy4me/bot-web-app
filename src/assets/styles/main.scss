@@ -1,9 +1,10 @@
-
+@import "./variables.scss";
 @import "./UI/input.scss";
 @import "./UI/button.scss";
 @import "./UI/card.scss";
 @import "./UI/datepicker.scss";
 @import "./UI/form.scss";
+@import "./UI/header-dropdown.scss";
 @import "./UI/swiper.scss";
 @import "./layouts/products.scss";
 @import "./layouts/header.scss";
@@ -20,8 +21,8 @@ button.rw-calendar-btn-today {
     font-weight: 400;
 
     color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #242424;
+    // background-color: #242424;
+    background-color:  $bg-color;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
