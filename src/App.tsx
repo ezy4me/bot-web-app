@@ -20,6 +20,7 @@ function App() {
   React.useEffect(() => {
     tg.MainButton.setParams({
       text: "Get Me Car",
+      color: "#202020"
     });
     tg.MainButton.show();
     tg.MainButton.disable();
