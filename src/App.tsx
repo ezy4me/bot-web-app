@@ -6,9 +6,18 @@ import { Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import { setupStore } from "./store/store";
 import ScrollToTop from "./components/ScrollToTop";
+import React from "react";
+import { useTelegram } from "./hooks/useTelegram";
 const store = setupStore();
 
+
+
 function App() {
+  const {tg} = useTelegram()
+  React.useEffect(() => {
+    tg.expand()
+  }, []);
+
   return (
     <Provider store={store}>
       <div className="app">
